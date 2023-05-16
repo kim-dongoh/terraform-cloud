@@ -45,7 +45,8 @@ locals {
   sg_rules = csvdecode(local.sg_csv)
 }
 
-resource "aws_security_group" "sg" {
+module "sg" {
+  source = "./module"
   for_each  = { for sg in local.sg_rules : sg.key => sg }
   rule_type = each.value.rule_type
   protocol  = each.value.protocol
