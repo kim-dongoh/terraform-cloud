@@ -1,0 +1,4 @@
+key,rule_type,protocol,from_port,to_port,src_type,src
+1,egress,-1,0,0,cidr,0.0.0.0/0
+2,ingress,tcp,22,22,cidr,0.0.0.0/0
+3,ingress,tcp,443,443,cidr,0.0.0.0/0
