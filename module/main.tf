@@ -7,7 +7,7 @@ variable "src" {}
 
 resource "aws_security_group" "sg" {
   
-  var.rule_type {
+  ingress {
     from_port = var.from_port
     to_port = var.to_port
     protocol = var.protocol
