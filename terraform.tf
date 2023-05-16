@@ -48,9 +48,9 @@ locals {
 resource "aws_security_group" "sg" {
   for_each  = { for sg in local.sg_rules : sg.key => sg }
   rule_type = each.value.rule_type
+  protocol  = each.value.protocol
   from_port = each.value.from_port
   to_port   = each.value.to_port
-  protocol  = each.value.protocol
   src_type  = each.value.src_type
   src       = each.value.src
 }
